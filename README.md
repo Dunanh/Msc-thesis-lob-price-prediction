@@ -3,7 +3,7 @@
 ## Overview
 This repository contains the code from my MSc thesis in Economics (cand.polit.) 
 from the University of Copenhagen. The project predicts the mid-price direction 
-of the SPY index (S&P 500 ETF) using machine learning models trained on 
+of the SPDR S&P 500 ETF Trust (Ticker: SPY) using machine learning models trained on 
 high-frequency limit order book data.
 
 ## Data
