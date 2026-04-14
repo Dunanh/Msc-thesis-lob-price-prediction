@@ -8,7 +8,7 @@ high-frequency limit order book data.
 
 ## Data
 - **Source:** LOBSTER (Limit Order Book System – The Efficient Reconstructor)
-- **Asset:** SPY index (S&P 500 ETF)
+- **Asset:** SPDR S&P 500 ETF Trust (Ticker: SPY)
 - **Period:** April 2016 – December 2023 (~2,006 trading days)
 - **Raw data:** >1 TB of nanosecond-resolution tick data
 - **Used:** ~960 GB after processing
