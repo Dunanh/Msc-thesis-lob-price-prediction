@@ -17,13 +17,18 @@ high-frequency limit order book data.
 
 ## Methodology
 
-### 1. Data Processing
-- Merged message book and order book files for each trading day (251 days per year)
+### 1. Raw Data Structure
+- Each trading day consists of two files: a message book and an order book
+- Each file contains several million observations at nanosecond resolution
+- Files were processed by looping through yearly folders, merging message and order book files pair-by-pair per trading day
+
+### 2. Data Processing
+- Merged message book and order book files for each trading day (1 pair per trading day, 251 days per year)
 - Resampled from nanosecond resolution → 1-second data (first observation per second)
 - Resampled further to 5-minute intervals
 - Processed across 8 years (2016–2023)
 
-### 2. Feature Engineering
+### 3. Feature Engineering
 Technical indicators calculated on mid-price:
 - Simple Moving Average (SMA) – 3 and 10 periods
 - Exponential Moving Average (EMA) – 3 and 10 periods
@@ -33,7 +38,7 @@ Technical indicators calculated on mid-price:
 - ATR (Average True Range)
 - Target variable: Direction (1 = up, -1 = down)
 
-### 3. Rolling Window Approach
+### 4. Rolling Window Approach
 Expanding rolling window to simulate real-world out-of-sample forecasting:
 - Train on 2016 → Test on 2017
 - Train on 2016–2017 → Test on 2018
@@ -41,7 +46,7 @@ Expanding rolling window to simulate real-world out-of-sample forecasting:
 - ...
 - Train on 2016–2022 → Test on 2023
 
-### 4. Models
+### 5. Models
 
 **Random Forest Classifier**
 - Hyperparameter tuning via RandomizedSearchCV
@@ -55,7 +60,7 @@ Expanding rolling window to simulate real-world out-of-sample forecasting:
 - TimeSeriesSplit (6 folds)
 - Result: ~50% accuracy
 
-### 5. Trading Simulation
+### 6. Trading Simulation
 Simple long-only strategy based on model predictions:
 - Starting capital: DKK 10,000
 - Buy when model predicts up (direction = 1)
