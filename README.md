@@ -76,6 +76,21 @@ Simple long-only strategy based on model predictions:
 
 ## Results Summary
 
+### Feature Importance
+![Feature Importance](feature_importance.png)
+
+MACD and RSI were the most influential features, ranking above raw order 
+book metrics such as bid/ask size.
+
+### Buy and Sell Signals (2023)
+![Buy Sell Signals](buy_sell_signals_2023.png)
+
+### Cumulative Returns: Active Trading vs Buy-and-Hold
+![Cumulative Returns](cumulative_returns_vs_buyhold.png)
+
+The active trading strategy underperformed a simple buy-and-hold approach 
+for most of 2023, narrowing the gap only toward year-end.
+
 | Model         | Frequency | Best Accuracy |
 |---------------|-----------|----------------|
 | Random Forest | 1-second  | 55.81%         |
