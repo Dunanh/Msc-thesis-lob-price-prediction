@@ -76,6 +76,14 @@ Simple long-only strategy based on model predictions:
 
 ## Results Summary
 
+| Model         | Frequency | Best Accuracy |
+| ------------- | --------- | ------------- |
+| Random Forest | 1-second  | 55.81%        |
+| Random Forest | 5-minute  | ~52%          |
+| SVM           | 5-minute  | ~50%          |
+
+## Results
+
 ### Feature Importance
 ![Feature Importance](feature_importance.png)
 
@@ -90,12 +98,6 @@ book metrics such as bid/ask size.
 
 The active trading strategy underperformed a simple buy-and-hold approach 
 for most of 2023, narrowing the gap only toward year-end.
-
-| Model         | Frequency | Best Accuracy |
-|---------------|-----------|----------------|
-| Random Forest | 1-second  | 55.81%         |
-| Random Forest | 5-minute  | ~52%           |
-| SVM           | 5-minute  | ~50%           |
 
 ## Computational Notes
 Due to computational constraints on a standard desktop PC (Intel Core i5, 
