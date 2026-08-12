@@ -117,13 +117,15 @@ would likely improve model performance further.
 ## Repository Structure
 
 **Data processing**
-- data_processing_2016-2023.ipynb — merges message/order book files per 
-  trading day, resamples to 1-second and 5-minute intervals
+- data_processing_2016.ipynb – data_processing_2023.ipynb (8 files, one per 
+  year) — merges message/order book files per trading day, resamples to 
+  1-second and 5-minute intervals
 
 **Feature engineering**
-- base_features_1sec_2016-2023.ipynb — Mid-Price, Spread, Volume Mean, 
-  Order Imbalance, VWAP on 1-second data
-- base_features_5min_2016-2023.ipynb — same features on 5-minute data
+- base_features_1sec_2016.ipynb – base_features_1sec_2023.ipynb (8 files) — 
+  Mid-Price, Spread, Volume Mean, Order Imbalance, VWAP on 1-second data
+- base_features_5min_2016.ipynb – base_features_5min_2023.ipynb (8 files) — 
+  same features on 5-minute data
 
 **Models**
 - random_forest_5min_training.ipynb — adds technical indicators (SMA, EMA, 
@@ -133,6 +135,10 @@ would likely improve model performance further.
   runs trading simulation on out-of-sample 2023 data
 - svm_5min_training.ipynb — trains SVM via rolling window
 - svm_5min_evaluation.ipynb — evaluates trained SVM models
+
+**Results**
+- feature_importance.png, buy_sell_signals_2023.png, 
+  cumulative_returns_vs_buyhold.png — result figures referenced above
 
 ## Tools & Libraries
 - Python 3.8
